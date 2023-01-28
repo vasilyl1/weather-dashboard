@@ -1,0 +1,33 @@
+:root{
+    --globalcolor:#fff;
+    --background-space: #454d54;
+    --highlight: #25cdae;
+    --textcolor:#f1f9f4;
+    --boxbackground: #03152f;
+    
+}
+
+
+.main, .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box45, h4
+{
+    display: flex;
+    margin: 1%;
+    padding: 1%;
+}
+
+.box1, .box2, .box45, .box3
+{
+    flex-direction: column;
+}
+
+.main, .box4, .box5
+{
+    flex-direction: row;
+}
+
+.box6, .box7, .box8, .box9, .box10 
+{
+    flex-direction: column;
+    background-color: var(--boxbackground);
+    color: var(--textcolor);
+}
