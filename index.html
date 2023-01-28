@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,60 @@
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
-    
+
 </head>
+
 <body>
-    <label for="search">Search for a City:</label>
-    <input id="search" class ="ui-autocomplete-input">
-   
+    <div class="main">
+        <h1>Weather Dashboard</h1>
+        <div class="box2">
+            <form id="searchForm">
+                <input type="text" class="form-input w-100" id="searchInput" name="searchInput"
+                    placeholder="San Diego" />
+                <button class="btnSearch">Search</button>
+            </form>
+            <button class="btnHistory">Atlanta</button>
+            <button class="btnHistory">Denver</button> <!--up to 8 searches-->
+        </div>
+        <div class = "box3">
+            <div class = "box4">
+                <h2 id="day0City">Atlanta date day1 icon</h2>
+                <ul class = "weatherData" id="weatherData0"></ul>
+            </div>
+            <div class = "box5">
+                <h4>5-Day Forecast:</h4>
+                <div class = "box6">
+                    <h6>Day1</h6>
+                    <i>weather icon</i>
+                    <ul class = "weatherData" id="weatherData1"></ul>
+                </div>
+                <div class = "box7">
+                    <h6>Day2</h6>
+                    <i>weather icon</i>
+                    <ul class = "weatherData" id="weatherData2"></ul>
+                </div>
+                <div class = "box8">
+                    <h6>Day3</h6>
+                    <i>weather icon</i>
+                    <ul class = "weatherData" id="weatherData3"></ul>
+                </div>
+                <div class = "box9">
+                    <h6>Day4</h6>
+                    <i>weather icon</i>
+                    <ul class = "weatherData" id="weatherData4"></ul>
+                </div>
+                <div class = "box10">
+                    <h6>Day5</h6>
+                    <i>weather icon</i>
+                    <ul class = "weatherData" id="weatherData5"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
