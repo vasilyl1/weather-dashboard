@@ -25,6 +25,7 @@ let geoCode = function (city) { //return geo coordinates by city name
         .then(function (response) {
             if (response.status === 404) { //checks for fetching errors
                 //document.location.replace(redirectUrl);
+                console.log("err loading location data");
             } else {
                 return response.json();
             }
@@ -39,9 +40,10 @@ let geoCode = function (city) { //return geo coordinates by city name
 
 
             fetch("http://api.openweathermap.org/data/2.5/forecast?lat=" + geoData.lat + "&lon=" + geoData.lon + "&appid=" + secret.openWeatherAPI)
-                .then(function (response) {
+                .then(function (response) { // returns 6 days weather data
                     if (response.status === 404) { //checks for fetching errors
                         //document.location.replace(redirectUrl);
+                        console.log("err loading weather data");
                     } else {
                         return response.json();
                     }

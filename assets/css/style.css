@@ -19,7 +19,8 @@ body {
     background-image: linear-gradient(to right,rgb(88, 45, 140), rgb(18, 18, 37));
 }
 
-.main, .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box45
+.main, .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, 
+.box45, .box4-1, .box4-2
 {
     display: flex;
     margin: 1%;
@@ -27,12 +28,12 @@ body {
 }
 
 
-.box1, .box2, .box45, .box3, .box4
+.box1, .box2, .box45, .box3, .box4-1, .box4-2
 {
     flex-direction: column;
 }
 
-.main, .box5
+.main, .box5, .box4
 {
     flex-direction: row;
 }
