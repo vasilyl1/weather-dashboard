@@ -25,7 +25,7 @@ body {
 }
 
 .main, .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, 
-.box4-1, .box4-2, .container
+.box4-1, .box4-2, .container, .box3-1
 {
     display: flex;
     margin: 1%;
@@ -33,12 +33,13 @@ body {
 }
 
 
-.box1, .box2,  .box3, .box4-1, .box4-2, .container
+.box1, .box2, .box4-1, .box4-2, .container,
+ .box3, .box3-1
 {
     flex-direction: column;
 }
 
- .box5, .box4, .main 
+ .box5, .box4, .main
 {
     flex-direction: row;
 }
@@ -52,10 +53,7 @@ body {
     flex-wrap: wrap;
 }
 
-.box2, .box3, .box4, .box5 {
+.container, .main, .box1, .box2, .box3, 
+.box4, .box4-1, .box4-2 {
     flex-wrap: wrap;
-}
-
-.box3 {
-    align-content: center;
 }
