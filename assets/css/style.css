@@ -16,6 +16,10 @@ h1 {
 h3 {
     text-align: center;
 }
+
+h6 {
+    font-size: 70%;
+}
 body {
     border: solid;
 }
@@ -24,7 +28,7 @@ body {
 }
 
 .main, .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, 
-.box45, .box4-1, .box4-2
+.box4-1, .box4-2, .container
 {
     display: flex;
     margin: 1%;
@@ -32,12 +36,12 @@ body {
 }
 
 
-.box1, .box2, .box45, .box3, .box4-1, .box4-2
+.box1, .box2,  .box3, .box4-1, .box4-2, .container
 {
     flex-direction: column;
 }
 
-.main, .box5, .box4
+ .box5, .box4, .main 
 {
     flex-direction: row;
 }
@@ -47,4 +51,12 @@ body {
     flex-direction: column;
     background-color: var(--boxbackground);
     color: var(--textcolor);
+}
+
+.box4, .box5 {
+    flex-wrap: wrap;
+}
+
+.box3 {
+    align-content: center;
 }

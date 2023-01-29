@@ -12,27 +12,28 @@
 </head>
 
 <body>
-    <div class="box1">
-        <h1>Weather Dashboard</h1>
-    </div>
-    <div class="main">
-        <div class="box2">
-            <form class="box2" id="searchForm">
-                <label for="searchInput">Search for a City:</label>
-                <input type="text" id="searchInput" name="searchInput" placeholder="San Diego" />
-                <button class="btnSearch" id="btnSearch">Search</button>
-            </form>
-            <button class="btnHistory">Atlanta</button>
-            <button class="btnHistory">Denver</button> <!--up to 8 searches-->
-            <button class="btnHistory">Seattle</button>
-            <button class="btnHistory">San Francisco</button>
-            <button class="btnHistory">Orlando</button>
-            <button class="btnHistory">New York</button>
-            <button class="btnHistory">Chicago</button>
-            <button class="btnHistory">Austin</button>
+    <div class="container">
+        <div class="box1">
+            <h1>Weather Dashboard</h1>
         </div>
-        <div class="box3">
-            <div class="box45">
+        <div class="main">
+            <div class="box2">
+                <form class="box2" id="searchForm">
+                    <label for="searchInput">Search for a City:</label>
+                    <input type="text" id="searchInput" name="searchInput" placeholder="San Diego" />
+                    <button class="btnSearch" id="btnSearch">Search</button>
+                </form>
+                <button class="btnHistory">Atlanta</button>
+                <button class="btnHistory">Denver</button> <!--up to 8 searches-->
+                <button class="btnHistory">Seattle</button>
+                <button class="btnHistory">San Francisco</button>
+                <button class="btnHistory">Orlando</button>
+                <button class="btnHistory">New York</button>
+                <button class="btnHistory">Chicago</button>
+                <button class="btnHistory">Austin</button>
+            </div>
+            <div class="box3">
+
                 <div class="box4">
                     <div class="box4-1">
                         <h2 id="day0City">Atlanta date day1 icon</h2>
@@ -43,16 +44,17 @@
                         </ul>
                     </div>
                     <div class="box4-2">
-                        <h3>Date / Time</h3>
                         <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon">
                         <h3>Light rain</h3>
                     </div>
+
                 </div>
                 <h4>5-Day Forecast:</h4>
                 <div class="box5">
+
                     <div class="box6">
                         <h6>Day1</h6>
-                        <i>weather icon</i>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon">
                         <ul class="weatherData" id="weatherData1">
                             <li>Temp:</li>
                             <li>Wind:</li>
@@ -61,7 +63,7 @@
                     </div>
                     <div class="box7">
                         <h6>Day2</h6>
-                        <i>weather icon</i>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon">
                         <ul class="weatherData" id="weatherData2">
                             <li>Temp:</li>
                             <li>Wind:</li>
@@ -70,7 +72,7 @@
                     </div>
                     <div class="box8">
                         <h6>Day3</h6>
-                        <i>weather icon</i>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon">
                         <ul class="weatherData" id="weatherData3">
                             <li>Temp:</li>
                             <li>Wind:</li>
@@ -79,7 +81,7 @@
                     </div>
                     <div class="box9">
                         <h6>Day4</h6>
-                        <i>weather icon</i>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon">
                         <ul class="weatherData" id="weatherData4">
                             <li>Temp:</li>
                             <li>Wind:</li>
@@ -88,7 +90,7 @@
                     </div>
                     <div class="box10">
                         <h6>Day5</h6>
-                        <i>weather icon</i>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon">
                         <ul class="weatherData" id="weatherData5">
                             <li>Temp:</li>
                             <li>Wind:</li>
@@ -96,10 +98,10 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./assets/js/config.js"></script>
