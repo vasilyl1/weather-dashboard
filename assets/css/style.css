@@ -17,9 +17,6 @@ h3 {
     text-align: center;
 }
 
-h6 {
-    font-size: 70%;
-}
 body {
     border: solid;
 }
@@ -51,9 +48,11 @@ body {
     flex-direction: column;
     background-color: var(--boxbackground);
     color: var(--textcolor);
+    font-size: 80%;
+    flex-wrap: wrap;
 }
 
-.box4, .box5 {
+.box2, .box3, .box4, .box5 {
     flex-wrap: wrap;
 }
 

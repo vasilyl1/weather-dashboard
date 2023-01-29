@@ -62,18 +62,38 @@ let geoCode = function (city) { //return geo coordinates by city name
                         //updating day1 data
                         day = new Date(data.list[0].dt*1000);
                         document.querySelector(".box6").children[0].textContent = day.toLocaleDateString();
+                        document.querySelector("#weatherData1").children[0].textContent = "Temp: " + data.list[0].main.temp + " oC";
+                        document.querySelector("#weatherData1").children[1].textContent = "Wind: " + data.list[0].wind.speed + " KPH";
+                        document.querySelector("#weatherData1").children[2].textContent = "Humidity: " + data.list[0].main.humidity + " %";
+                        document.querySelector(".box6").children[1].src = "http://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + "@2x.png";
                         //updating day2 data
                         day = new Date(data.list[8].dt*1000);
                         document.querySelector(".box7").children[0].textContent = day.toLocaleDateString();
+                        document.querySelector("#weatherData2").children[0].textContent = "Temp: " + data.list[8].main.temp + " oC";
+                        document.querySelector("#weatherData2").children[1].textContent = "Wind: " + data.list[8].wind.speed + " KPH";
+                        document.querySelector("#weatherData2").children[2].textContent = "Humidity: " + data.list[8].main.humidity + " %";
+                        document.querySelector(".box7").children[1].src = "http://openweathermap.org/img/wn/" + data.list[8].weather[0].icon + "@2x.png";
                         //updating day3 data
                         day = new Date(data.list[16].dt*1000);
                         document.querySelector(".box8").children[0].textContent = day.toLocaleDateString();
+                        document.querySelector("#weatherData3").children[0].textContent = "Temp: " + data.list[16].main.temp + " oC";
+                        document.querySelector("#weatherData3").children[1].textContent = "Wind: " + data.list[16].wind.speed + " KPH";
+                        document.querySelector("#weatherData3").children[2].textContent = "Humidity: " + data.list[16].main.humidity + " %";
+                        document.querySelector(".box8").children[1].src = "http://openweathermap.org/img/wn/" + data.list[16].weather[0].icon + "@2x.png";
                         //updating day4 data
                         day = new Date(data.list[24].dt*1000);
                         document.querySelector(".box9").children[0].textContent = day.toLocaleDateString();
+                        document.querySelector("#weatherData4").children[0].textContent = "Temp: " + data.list[24].main.temp + " oC";
+                        document.querySelector("#weatherData4").children[1].textContent = "Wind: " + data.list[24].wind.speed + " KPH";
+                        document.querySelector("#weatherData4").children[2].textContent = "Humidity: " + data.list[24].main.humidity + " %";
+                        document.querySelector(".box8").children[1].src = "http://openweathermap.org/img/wn/" + data.list[24].weather[0].icon + "@2x.png";
                         //updating day5 data
                         day = new Date(data.list[32].dt*1000);
                         document.querySelector(".box10").children[0].textContent = day.toLocaleDateString();
+                        document.querySelector("#weatherData5").children[0].textContent = "Temp: " + data.list[32].main.temp + " oC";
+                        document.querySelector("#weatherData5").children[1].textContent = "Wind: " + data.list[32].wind.speed + " KPH";
+                        document.querySelector("#weatherData5").children[2].textContent = "Humidity: " + data.list[32].main.humidity + " %";
+                        document.querySelector(".box10").children[1].src = "http://openweathermap.org/img/wn/" + data.list[32].weather[0].icon + "@2x.png";
 
                         console.log(data);
                     } else {
