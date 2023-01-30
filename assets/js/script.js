@@ -26,7 +26,7 @@ let manageHistoryInput = function (input) {
 };
 
 let geoCode = function (city) { //return geo coordinates by city name
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + secret.openWeatherAPI)
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + secret.openWeatherAPI)
         .then(function (response) {
             if (response.status === 404) { //checks for fetching errors
                 //document.location.replace(redirectUrl);
@@ -48,7 +48,7 @@ let geoCode = function (city) { //return geo coordinates by city name
                 return;
             }
 
-            fetch("http://api.openweathermap.org/data/2.5/forecast?lat=" + geoData.lat + "&lon=" + geoData.lon + "&units=metric&appid=" + secret.openWeatherAPI)
+            fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + geoData.lat + "&lon=" + geoData.lon + "&units=metric&appid=" + secret.openWeatherAPI)
                 .then(function (response) { // returns 6 days weather data
                     if (response.status === 404) { //checks for fetching errors
                         //document.location.replace(redirectUrl);
