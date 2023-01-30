@@ -3,6 +3,7 @@ let searchInput = document.querySelector("#searchInput");// search input
 let searchHistory = document.querySelectorAll(".btnHistory"); //  history buttons
 let geoData = {}; // geolocation data
 let weatherData = {}; // weather data
+let storedInput = []; // array of searches stored in a browser
 
 
 let manageHistoryInput = function (input) {
@@ -16,8 +17,11 @@ let manageHistoryInput = function (input) {
     if (!isInHistory) { // the city is not in history
         for (i = 7; i > 0; i--) { // move the list down
             searchHistory[i].textContent = searchHistory[i - 1].textContent;
+            storedInput[i] = searchHistory[i].textContent; // store new history to localStorage
         }
         searchHistory[0].textContent = input; // save input to the top
+        storedInput[0] = input; // update local storage
+        localStorage.setItem("storedInput", JSON.stringify(storedInput));
     }
 };
 
@@ -48,7 +52,7 @@ let geoCode = function (city) { //return geo coordinates by city name
                 .then(function (response) { // returns 6 days weather data
                     if (response.status === 404) { //checks for fetching errors
                         //document.location.replace(redirectUrl);
-                        console.log("err loading weather data");
+                        console.log("err 404: API weather provider network connection");
                     } else {
                         return response.json();
                     }
@@ -100,9 +104,9 @@ let geoCode = function (city) { //return geo coordinates by city name
                         document.querySelector("#weatherData5").children[2].textContent = "Humidity: " + data.list[32].main.humidity + " %";
                         document.querySelector(".box10").children[1].src = "http://openweathermap.org/img/wn/" + data.list[32].weather[0].icon + "@2x.png";
 
-                        
+
                     } else {
-                        console.log("err on getting weather data");
+                        console.log("err API on getting weather data");
                     }
 
                 });
@@ -130,4 +134,11 @@ for (let i = 0; i < 8; i++) { // listen for history buttons click events
         searchInput.value = searchHistory[i].textContent;
         searchClick(event);
     });
+};
+
+storedInput = JSON.parse(localStorage.getItem("storedInput"));// history of locations stored in browser
+if (storedInput.length > 0) { // something is stored - restore
+    for (let i = 0; i < 8; i++) {
+        searchHistory[i].textContent = storedInput[i];
+    }
 }

@@ -1,21 +1,21 @@
 # Weather Dashboard
 
-Weather dashboard is a simple application runs in the browser and features the calls to external APIs to retrieve weather data for multiple cities using specific parameters in a URL.
-The search history for the cities is stored in local storage of the browser loaded every time the application is restarted in the browser.
+Weather dashboard is a simple application, runs in the browser and features calls to external APIs. API's are used to retrieve weather data for multiple cities using specific parameters in a URL. The city and it's geo location search are both done by using the same API's.
+The search history for the cities is stored in the local storage of the browser and loaded every time the application is refreshed.
 
 ## Description
 
-This application runs in the browser and features dynamically updated API requestst to the 3rd party service (OpenWeather) to fetch the weather information for specific locations. The user is a traveller who would like to monitor the weather conditions across the multiple cities for the period of 5 days.
+This application runs locally in the browser and features dynamically updated API requests to the 3rd party service (OpenWeather) to fetch the weather information for specific locations. The user is a propspective traveller who would like to monitor the weather conditions across multiple cities for the period of 5 days.
 
 ## Installation
 
-An app is live on Internet and requires to enter and run the following URL from the browser:
+An application is live on Internet and requires to enter the following URL from the browser:
 
 https://vasilyl1.github.io/weather-dashboard
 
 ## Usage
 
-When the application is launched in the browser, the user is offered to perform the search for the city in question to get the weather conditions. Alternatively, there is a possibility to select one of the pre-defined or previously searched locations for quick use and convenience. The most recently search locations are displayed on top, the locations which are selected from the list are not changing the list so it starts to serve like a cache for the most often used locations.
+When the app is launched in the browser, the user is offered to perform the search for the city in question to get the weather conditions. Alternatively, there is a possibility to select one of the pre-defined or previously searched locations for quick use and convenience. The most recent search locations are displayed on the top, the locations which are selected from the list are not changing the list position so the list starts to serve like a cache for the recently used locations being included to the top.
 
 Attached screenshot features the screen of the loaded application:
 
