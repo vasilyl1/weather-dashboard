@@ -138,6 +138,7 @@ for (let i = 0; i < 8; i++) { // listen for history buttons click events
 
 storedInput = JSON.parse(localStorage.getItem("storedInput"));// history of locations stored in browser
 if (storedInput === null) {//nothing in local storage
+    storedInput = [8];
     for (let i = 0; i < 8; i++) { // fill in the pre-defined values
         storedInput[i] = searchHistory[i].textContent;
     }
