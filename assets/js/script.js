@@ -100,7 +100,7 @@ let geoCode = function (city) { //return geo coordinates by city name
                         document.querySelector("#weatherData5").children[2].textContent = "Humidity: " + data.list[32].main.humidity + " %";
                         document.querySelector(".box10").children[1].src = "http://openweathermap.org/img/wn/" + data.list[32].weather[0].icon + "@2x.png";
 
-                        console.log(data);
+                        
                     } else {
                         console.log("err on getting weather data");
                     }
