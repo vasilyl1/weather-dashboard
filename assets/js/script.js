@@ -1,10 +1,11 @@
-let userInput = document.querySelector("#btnSearch");
-let geoData = {};
-let weatherData = {};
+let userInput = document.querySelector("#btnSearch"); // search button
+let searchInput = document.querySelector("#searchInput");// search input
+let searchHistory = document.querySelectorAll(".btnHistory"); //  history buttons
+let geoData = {}; // geolocation data
+let weatherData = {}; // weather data
 
 
 let manageHistoryInput = function (input) {
-    let searchHistory = document.querySelectorAll(".btnHistory"); // get input history
     let isInHistory = false;
 
     for (let i = 0; i < 7; i++) { // check if the input is in history
@@ -29,15 +30,19 @@ let geoCode = function (city) { //return geo coordinates by city name
             } else {
                 return response.json();
             }
-        }).then(function (data) {
-            geoData = {
-                country: data[0].country,
-                lat: data[0].lat,
-                lon: data[0].lon,
-                state: data[0].state,
-                name: data[0].name
+        }).then(function (data) { // assign location data
+            if (data.length > 0) { // geolocation returned
+                geoData = {
+                    country: data[0].country,
+                    lat: data[0].lat,
+                    lon: data[0].lon,
+                    state: data[0].state,
+                    name: data[0].name
+                }
+            } else {
+                console.log("invalid city input");
+                return;
             }
-
 
             fetch("http://api.openweathermap.org/data/2.5/forecast?lat=" + geoData.lat + "&lon=" + geoData.lon + "&units=metric&appid=" + secret.openWeatherAPI)
                 .then(function (response) { // returns 6 days weather data
@@ -52,7 +57,7 @@ let geoCode = function (city) { //return geo coordinates by city name
 
                         //take every 8 records as the forecast is 5 days and 40 records - every 3 hour
                         //updating day0 data
-                        let day = new Date(data.list[0].dt*1000); //take date as object
+                        let day = new Date(data.list[0].dt * 1000); //take date as object
                         document.querySelector("#day0City").textContent = data.city.name + ", " + data.city.country + " (" + day.toLocaleDateString() + ")";
                         document.querySelector("#weatherData0").children[0].textContent = "Temp: " + data.list[0].main.temp + " oC";
                         document.querySelector("#weatherData0").children[1].textContent = "Wind: " + data.list[0].wind.speed + " KPH";
@@ -60,35 +65,35 @@ let geoCode = function (city) { //return geo coordinates by city name
                         document.querySelector(".box4-2").children[0].src = "http://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + "@2x.png";
                         document.querySelector(".box4-2").children[1].textContent = data.list[0].weather[0].description;
                         //updating day1 data
-                        day = new Date(data.list[0].dt*1000);
+                        day = new Date(data.list[0].dt * 1000);
                         document.querySelector(".box6").children[0].textContent = day.toLocaleDateString();
                         document.querySelector("#weatherData1").children[0].textContent = "Temp: " + data.list[0].main.temp + " oC";
                         document.querySelector("#weatherData1").children[1].textContent = "Wind: " + data.list[0].wind.speed + " KPH";
                         document.querySelector("#weatherData1").children[2].textContent = "Humidity: " + data.list[0].main.humidity + " %";
                         document.querySelector(".box6").children[1].src = "http://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + "@2x.png";
                         //updating day2 data
-                        day = new Date(data.list[8].dt*1000);
+                        day = new Date(data.list[8].dt * 1000);
                         document.querySelector(".box7").children[0].textContent = day.toLocaleDateString();
                         document.querySelector("#weatherData2").children[0].textContent = "Temp: " + data.list[8].main.temp + " oC";
                         document.querySelector("#weatherData2").children[1].textContent = "Wind: " + data.list[8].wind.speed + " KPH";
                         document.querySelector("#weatherData2").children[2].textContent = "Humidity: " + data.list[8].main.humidity + " %";
                         document.querySelector(".box7").children[1].src = "http://openweathermap.org/img/wn/" + data.list[8].weather[0].icon + "@2x.png";
                         //updating day3 data
-                        day = new Date(data.list[16].dt*1000);
+                        day = new Date(data.list[16].dt * 1000);
                         document.querySelector(".box8").children[0].textContent = day.toLocaleDateString();
                         document.querySelector("#weatherData3").children[0].textContent = "Temp: " + data.list[16].main.temp + " oC";
                         document.querySelector("#weatherData3").children[1].textContent = "Wind: " + data.list[16].wind.speed + " KPH";
                         document.querySelector("#weatherData3").children[2].textContent = "Humidity: " + data.list[16].main.humidity + " %";
                         document.querySelector(".box8").children[1].src = "http://openweathermap.org/img/wn/" + data.list[16].weather[0].icon + "@2x.png";
                         //updating day4 data
-                        day = new Date(data.list[24].dt*1000);
+                        day = new Date(data.list[24].dt * 1000);
                         document.querySelector(".box9").children[0].textContent = day.toLocaleDateString();
                         document.querySelector("#weatherData4").children[0].textContent = "Temp: " + data.list[24].main.temp + " oC";
                         document.querySelector("#weatherData4").children[1].textContent = "Wind: " + data.list[24].wind.speed + " KPH";
                         document.querySelector("#weatherData4").children[2].textContent = "Humidity: " + data.list[24].main.humidity + " %";
                         document.querySelector(".box8").children[1].src = "http://openweathermap.org/img/wn/" + data.list[24].weather[0].icon + "@2x.png";
                         //updating day5 data
-                        day = new Date(data.list[32].dt*1000);
+                        day = new Date(data.list[32].dt * 1000);
                         document.querySelector(".box10").children[0].textContent = day.toLocaleDateString();
                         document.querySelector("#weatherData5").children[0].textContent = "Temp: " + data.list[32].main.temp + " oC";
                         document.querySelector("#weatherData5").children[1].textContent = "Wind: " + data.list[32].wind.speed + " KPH";
@@ -106,9 +111,7 @@ let geoCode = function (city) { //return geo coordinates by city name
 
 };
 
-let buttonClickHandler = function (event) { //search for the entered city name
-    let searchInput = document.querySelector("#searchInput");// get the input search
-    let geoData1 = {};
+let searchClick = function (event) { //search for the entered city name
 
     event.preventDefault();
 
@@ -121,4 +124,10 @@ let buttonClickHandler = function (event) { //search for the entered city name
 
 
 
-userInput.addEventListener('click', buttonClickHandler); // listen to the search button click event
+userInput.addEventListener("click", searchClick); // listen to the search button click event
+for (let i = 0; i < 8; i++) { // listen for history buttons click events
+    searchHistory[i].addEventListener("click", function (event) { // change input value and call the search function 
+        searchInput.value = searchHistory[i].textContent;
+        searchClick(event);
+    });
+}

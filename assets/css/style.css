@@ -1,9 +1,10 @@
 :root{
     --globalcolor:#fff;
     --background-space: #454d54;
-    --highlight: #25cdae;
+    --highlight: #a587cb;
     --textcolor:#f1f9f4;
     --boxbackground: #03152f;
+    --buttonbackground: rgb(68, 76, 159);
     
 }
 
@@ -17,7 +18,7 @@ h3 {
     text-align: center;
 }
 
-body {
+body, .box4 {
     border: solid;
 }
 .box1 {
@@ -53,7 +54,32 @@ body {
     flex-wrap: wrap;
 }
 
-.container, .main, .box1, .box2, .box3, 
-.box4, .box4-1, .box4-2 {
+.container, .box1, 
+.box4-1, .box4-2 {
     flex-wrap: wrap;
+}
+
+.box4 {
+    justify-content: center;
+}
+
+.box5 {
+    flex-wrap: nowrap;
+}
+.btnHistory {
+    margin: 1%;
+    padding: 0.5%;
+    border:none;
+}
+
+.btnSearch {
+    margin: 1%;
+    padding: 0.5%;
+    background-color: var(--buttonbackground);
+    color: var(--textcolor);
+    border:none;
+}
+
+.btnSearch:hover, .btnHistory:hover {
+    background-color: var(--highlight);
 }
