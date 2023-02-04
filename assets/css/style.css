@@ -62,9 +62,11 @@ body, .box4 {
 .box4 {
     justify-content: center;
 }
-
+.box3 {
+    flex-basis: 80%;
+}
 .box5 {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .btnHistory {
     margin: 1%;
